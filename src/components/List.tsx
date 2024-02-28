@@ -1,7 +1,20 @@
-import React from "react";
+import { Todo } from "../types";
+import TodoItem from "./TodoItem";
+import "../assets/scss/List.scss";
 
-const List = () => {
-  return <div>리스트</div>;
+interface Props {
+  todos: Todo[];
+  onClickDelete: (id: number) => void;
+}
+
+const List = ({ todos, onClickDelete }: Props) => {
+  return (
+    <div className="list">
+      {todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} onClickDelete={onClickDelete} />
+      ))}
+    </div>
+  );
 };
 
 export default List;

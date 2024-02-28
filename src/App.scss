@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(239, 239, 239);
+  .todoList {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 50%;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 1em;
+    padding: 2em;
+  }
+}
