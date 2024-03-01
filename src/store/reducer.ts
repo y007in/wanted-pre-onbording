@@ -1,14 +1,23 @@
-interface Action {
-  type: string;
-  payload?: any;
-}
+import { ADD_TODO, DELETE_TODO, Action, Todo } from "../types";
 
-interface State {}
+const initialState = {
+  todos: [],
+};
 
-let initialState: State = {};
-
-function reducer(state: State = initialState, action: Action): State {
+function reducer(state: { todos: Todo[] } = initialState, action: Action) {
   switch (action.type) {
+    case ADD_TODO: {
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+      };
+    }
+    case DELETE_TODO: {
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== action.payload.id),
+      };
+    }
     default:
       return state;
   }
