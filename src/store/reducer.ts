@@ -18,6 +18,7 @@ function reducer(state: { todos: Todo[] } = initialState, action: Action) {
         todos: state.todos.filter((todo) => todo.id !== action.payload.id),
       };
     }
+
     default:
       return state;
   }
