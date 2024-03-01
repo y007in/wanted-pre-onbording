@@ -10,6 +10,7 @@ const List = () => {
   const onClickDelete = (id: number) => {
     dispatch(deleteTodo(id));
   };
+
   return (
     <div className="list">
       {todos.map((todo: any) => (

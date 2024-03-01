@@ -15,16 +15,16 @@ const TodoEditor = () => {
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
-  // const handleClickAdd = () => {
-  //   onClickAdd(text);
-  //   setText("");
-  // };
+
   return (
     <div className="todoEditor">
       <input
         className="inputEditor"
         value={text}
         onChange={onChangeInput}
+        onKeyDown={(e) => {
+          if (e.keyCode === 13) onClickAdd();
+        }}
         placeholder="할 일을 입력하세요."
       />
       <button className="addBtn" onClick={onClickAdd}>
